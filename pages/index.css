@@ -165,4 +165,110 @@
     flex-direction: column;
     margin: 70px 0 0;
   }
+}
+
+.form {
+  margin: 0 0 100px 0;
+  position: relative;
+}
+.form_place_footer {
+  grid-area: form;
+}
+.form__legend {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: #cfcfcf;
+  max-width: 230px;
+  margin: 0 0 50px;
+}
+.form__item {
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+.form__item_type_email {
+  width: 360px;
+  height: 50px;
+  font-family: inherit;
+  text-indent: 20px;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+  border-radius: 4px;
+  background-color: inherit;
+  outline: none;
+}
+.form__item_type_email::-webkit-input-placeholder {
+  color: #222;
+}
+.form__item_type_email::-ms-input-placeholder {
+  color: #222;
+}
+.form__item_type_email:hover::-webkit-input-placeholder {
+  color: #151515;
+}
+.form__item_type_email:hover::-ms-input-placeholder {
+  color: #151515;
+}
+.form__item_type_email:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.form__item_type_email:focus::-ms-input-placeholder {
+  color: transparent;
+}
+.form__input-container {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.form__button {
+  position: absolute;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 215%;
+  text-align: right;
+  color: #151515;
+  bottom: 11px;
+  left: 328px;
+}
+.form__button_disabled {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .form__legend {
+    margin: 0 0 40px;
+  }
+  .form__item_type_email {
+    width: 284px;
+    height: 50px;
+  }
+  .form__button {
+    left: 252px;
+  }
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  grid-template-areas: "form form" "copy switcher";
+  padding: 80px 120px 60px;
+  background-color: #efefef;
+  z-index: 1;
+}
+.footer__copyright {
+  grid-area: copy;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  color: #cfcfcf;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 60px 18px 16px;
+    grid-template-areas: "form form" "copy logo";
+  }
 }/*# sourceMappingURL=index.css.map */
