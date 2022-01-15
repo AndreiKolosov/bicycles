@@ -1,0 +1,9 @@
+.logo_place_footer {
+  grid-area: logo;
+  margin: 0 0 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .logo_place_footer {
+    display: none;
+  }
+}/*# sourceMappingURL=logo.css.map */

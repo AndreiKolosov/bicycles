@@ -167,6 +167,16 @@
   }
 }
 
+.logo_place_footer {
+  grid-area: logo;
+  margin: 0 0 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .logo_place_footer {
+    display: none;
+  }
+}
+
 .form {
   margin: 0 0 100px 0;
   position: relative;
@@ -246,6 +256,13 @@
   .form__button {
     left: 252px;
   }
+}
+
+.content {
+  flex: 1;
+  padding: 74px 0 0 120px;
+  position: relative;
+  z-index: 1;
 }
 
 .footer {
