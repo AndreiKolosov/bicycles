@@ -15,13 +15,18 @@
     &_place_bikes {
       grid-area: track;
       gap: 0 43px;
+      margin: 0 0 0 120px;
     }
+  }
+
+  &__item {
+    display: grid;
   }
 
   &__buttons {
     &_place_bikes {
       grid-area: buttons;
-      padding: 92px 0 0;
+      padding: 92px 120px 0 0;
       justify-self: end;
     }
   }

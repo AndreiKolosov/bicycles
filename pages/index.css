@@ -47,10 +47,14 @@
 .slider__track_place_bikes {
   grid-area: track;
   gap: 0 43px;
+  margin: 0 0 0 120px;
+}
+.slider__item {
+  display: grid;
 }
 .slider__buttons_place_bikes {
   grid-area: buttons;
-  padding: 92px 0 0;
+  padding: 92px 120px 0 0;
   justify-self: end;
 }
 .slider__btn:last-of-type {
@@ -365,7 +369,7 @@
 
 .content {
   flex: 1;
-  padding: 74px 0 0 120px;
+  padding: 74px 0 0 0;
   position: relative;
   z-index: 1;
 }
@@ -375,7 +379,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "title image" "description image" "button image" "bike-name image";
-  padding: 20px 0 0 0;
+  padding: 20px 0 0 120px;
 }
 .intro__title {
   font-style: normal;
@@ -474,15 +478,15 @@
 .columns {
   gap: 0 80px;
   margin: 0;
-  padding: 120px 0 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .columns_img-side_left {
   grid-template-areas: "image title" "image description" "image subline";
+  padding: 120px 0 60px 120px;
 }
 .columns_img-side_right {
-  padding: 120px 120px 150px 0;
+  padding: 0 120px 150px 120px;
   gap: 0;
   grid-template-areas: "title image" "description image" "subline image";
 }
@@ -583,6 +587,10 @@
   grid-area: subline;
 }
 
+.surfaces {
+  box-sizing: border-box;
+  padding: 60px 0 0 120px;
+}
 .surfaces__title {
   font-style: normal;
   font-weight: 700;
@@ -662,7 +670,8 @@
 
 .bikes {
   margin: 0;
-  padding: 0 120px 0 0;
+  padding: 0;
+  box-sizing: content-box;
 }
 .bikes__title {
   font-style: normal;
@@ -672,7 +681,7 @@
   letter-spacing: -0.5px;
   color: #151515;
   padding: 0;
-  margin: 60px 0 120px 0;
+  margin: 60px 0 120px 120px;
   max-width: 460px;
   grid-area: title;
 }
@@ -680,13 +689,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   border-radius: 20px;
   position: relative;
   z-index: 3;
   filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
   overflow: hidden;
+  margin: 0 0 22px 0;
 }
 .bikes__img-wrapper::before {
   content: "";
@@ -706,8 +714,8 @@
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  background-color: #f4f4f4;
   box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  background-color: #f4f4f4;
   z-index: 2;
 }
 .bikes__bike-img {
@@ -725,7 +733,7 @@
   font-size: 18px;
   line-height: 122%;
   color: #222;
-  margin: 22px 0 60px;
+  margin: 0 0 180px 0;
 }
 
 .footer {

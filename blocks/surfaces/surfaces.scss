@@ -1,4 +1,7 @@
 .surfaces {
+  box-sizing: border-box;
+  padding: 60px 0 0 120px;
+
   &__title {
     font-style: normal;
     font-weight: 700;
