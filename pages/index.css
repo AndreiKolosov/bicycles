@@ -311,9 +311,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.header__menu_active {
-  transform: translate(0px, 0px);
-}
 .header__menu-icon {
   display: none;
 }
@@ -345,6 +342,9 @@
     background-color: #f4f4f4;
     transform: translate(-100%, 0px);
     transition: 0.3s ease 0s;
+  }
+  .header__menu_active {
+    transform: translate(0px, 0px);
   }
   .header__menu-icon {
     display: block;
