@@ -1,9 +1,1 @@
-{
-  "version": 3,
-  "sources": [
-    "content.scss"
-  ],
-  "names": [],
-  "mappings": "AAAA;EACE,OAAA;EACA,uBAAA;EACA,kBAAA;EACA,UAAA;AACF",
-  "file": "content.css"
-}
+{"version":3,"sources":["content.scss"],"names":[],"mappings":"AAAA;EACE,OAAA;EACA,uBAAA;EACA,kBAAA;EACA,UAAA;AACF","file":"content.css"}

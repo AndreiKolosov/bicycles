@@ -1,0 +1,61 @@
+.slider {
+  overflow: hidden;
+
+  &_place_bikes {
+    display: grid;
+    grid-template-areas:
+      "title title buttons"
+      "track track track";
+  }
+
+  &__track {
+    display: flex;
+    transition: 0.3s;
+
+    &_place_bikes {
+      grid-area: track;
+      gap: 0 43px;
+    }
+  }
+
+  &__buttons {
+    &_place_bikes {
+      grid-area: buttons;
+      padding: 92px 0 0;
+      justify-self: end;
+    }
+  }
+
+  &__btn {
+    &:last-of-type {
+      margin: 0;
+    }
+
+    &_place_surfaces {
+      width: 50px;
+      height: 50px;
+      background-color: #ebebeb;
+      border-radius: 50px;
+      margin-right: 20px;
+      transition: opacity 0.2s linear;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:disabled {
+        color: inherit;
+      }
+    }
+
+    &_place_bikes {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 156%;
+      text-align: right;
+      color: $primary-title-color;
+      margin: 0 40px 0 0;
+    }
+  }
+}

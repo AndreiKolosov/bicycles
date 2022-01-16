@@ -1,0 +1,16 @@
+.bikes {
+  margin: 0;
+  padding: 0 120px 0 0;
+}
+.bikes__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 109%;
+  letter-spacing: -0.5px;
+  color: #151515;
+  padding: 0;
+  margin: 60px 0 120px 0;
+  max-width: 460px;
+  grid-area: title;
+}/*# sourceMappingURL=bikes.css.map */
