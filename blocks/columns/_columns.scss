@@ -6,9 +6,9 @@
 
   &_img-side_left {
     grid-template-areas:
-      "image title"
-      "image description"
-      "image subline";
+      'image title'
+      'image description'
+      'image subline';
     padding: 120px 0 60px 120px;
   }
 
@@ -16,9 +16,9 @@
     padding: 0 120px 150px 120px;
     gap: 0;
     grid-template-areas:
-      "title image"
-      "description image"
-      "subline image";
+      'title image'
+      'description image'
+      'subline image';
   }
 
   &__title {
@@ -27,7 +27,6 @@
     font-size: 55px;
     line-height: 109%;
     letter-spacing: -0.5px;
-    color: $primary-title-color;
     max-width: 460px;
     padding: 0;
     margin: 0 0 50px 0;
@@ -39,7 +38,6 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 156%;
-    color: $primary-text-color;
     opacity: 0.7;
     max-width: 460px;
     padding: 0;
@@ -52,7 +50,6 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 160%;
-    color: $primary-title-color;
     max-width: 460px;
     padding: 0;
     margin: 0 0 6px 0;
@@ -85,7 +82,6 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 156%;
-    color: $primary-title-color;
     transition: opacity linear 0.3s;
 
     &:hover {
@@ -107,7 +103,6 @@
     font-size: 34px;
     line-height: 129%;
     letter-spacing: -0.5px;
-    color: #151515;
     max-width: 460px;
     padding: 0;
     margin: 0 0 262px 0;
@@ -119,11 +114,13 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 175%;
-    color: $primary-text-color;
     opacity: 0.7;
     max-width: 460px;
     padding: 0;
     margin: 0;
     grid-area: subline;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0 18px;
   }
 }

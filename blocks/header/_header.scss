@@ -83,7 +83,6 @@
     font-size: 14px;
     line-height: 129%;
     text-align: right;
-    color: $primary-title-color;
   }
 
   &__menu-list {
@@ -106,7 +105,6 @@
       left: 0;
       width: 100%;
       height: calc(100% - 74px);
-      background-color: $primary-color;
       transform: translate(-100%, 0px);
       transition: 0.3s ease 0s;
 
@@ -125,7 +123,6 @@
       font-size: 18px;
       line-height: 100%;
       text-align: center;
-      color: $primary-title-color;
     }
 
     &__menu-list {

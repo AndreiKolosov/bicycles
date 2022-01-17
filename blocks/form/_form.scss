@@ -11,7 +11,6 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 133%;
-    color: $primary-footer-text-color;
     max-width: 230px;
     margin: 0 0 50px;
   }
@@ -32,21 +31,21 @@
       outline: none;
     }
 
-    &_type_email::-webkit-input-placeholder {
-      color: $primary-text-color;
-    }
+    // &_type_email::-webkit-input-placeholder {
+    //   color: $primary-text-color;
+    // }
 
-    &_type_email::-ms-input-placeholder {
-      color: $primary-text-color;
-    }
+    // &_type_email::-ms-input-placeholder {
+    //   color: $primary-text-color;
+    // }
 
-    &_type_email:hover::-webkit-input-placeholder {
-      color: $primary-title-color;
-    }
+    // &_type_email:hover::-webkit-input-placeholder {
+    //   color: $primary-color;
+    // }
 
-    &_type_email:hover::-ms-input-placeholder {
-      color: $primary-title-color;
-    }
+    // &_type_email:hover::-ms-input-placeholder {
+    //   color: $primary-color;
+    // }
 
     &_type_email:focus::-webkit-input-placeholder {
       color: transparent;
@@ -70,7 +69,6 @@
     font-size: 13px;
     line-height: 215%;
     text-align: right;
-    color: $primary-title-color;
     bottom: 11px;
     left: 328px;
   }

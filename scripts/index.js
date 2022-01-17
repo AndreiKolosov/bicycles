@@ -1,26 +1,28 @@
 'use strict';
 
+const page = document.querySelector('.page'); // Контейнер страницы
 const menuBtn = document.querySelector('.header__menu-icon'); // кнопка меню
 const menuBtnLines = document.querySelectorAll('.header__icon-line'); // полоски кнопки
 const menu = document.querySelector('.header__menu'); // меню
 const footerForm = document.querySelector('.form_place_footer'); // форма в футере
 const emailInput = footerForm.querySelector('.form__item_type_email'); // поле ввода email в форме футера
 const footerFormBtn = footerForm.querySelector('.form__button'); // Кнопка в форме
-const page = document.querySelector('.page'); // Контейнер страницы
 const themeSwitcher = document.querySelectorAll('.theme-switcher__button'); // Кнопки переключатели темы
 // --------------------------------------------------//
-// Slider
+// Slider surfaces
 let position = 0;
 const slidesToShow = 1;
 const slidesToScroll = 1;
-const sliderContainer = document.querySelector('.slider');
-const sliderTrack = sliderContainer.querySelector('.slider__track');
-const sliderItems = sliderContainer.querySelectorAll('.slider__item');
-const itemsCount = sliderItems.length;
-const itemWidth = sliderContainer.clientWidth / slidesToShow;
-const movePosition = slidesToScroll * itemWidth;
-const btnPrev = document.querySelector('#btn-prev');
-const btnNext = document.querySelector('#btn-next');
+const surfacesSliderContainer = document.querySelector('#surfaces-slider-container');
+const surfacesSliderTrack = surfacesSliderContainer.querySelector('.slider__track');
+const surfacesSliderItems = surfacesSliderContainer.querySelectorAll('.slider__item');
+const surfacesItemsCount = surfacesSliderItems.length;
+const surfacesItemWidth = surfacesSliderContainer.clientWidth / slidesToShow;
+const surfacesMovePosition = slidesToScroll * surfacesItemWidth;
+const surfacesBtnPrev = document.querySelector('#btn-prev');
+const surfacesBtnNext = document.querySelector('#btn-next');
+// --------------------------------------------------//
+// Slider bikes
 
 // --------------------------------------------------//
 
@@ -50,45 +52,43 @@ emailInput.onblur = () => {
 themeSwitcher.forEach((element) => {
   element.addEventListener('click', () => {
     page.classList.toggle('page_theme_dark');
+    const footer = page.querySelector('footer').classList.toggle('footer_theme_dark');
     element.classList.toggle('theme-switcher__button_active');
   });
 });
 // --------------------------------------------------//
 
-// Slider
+// Slider surfaces
 
-sliderItems.forEach((item) => {
-  item.style.minWidth = `${itemWidth}px`;
+surfacesSliderItems.forEach((item) => {
+  item.style.minWidth = `${surfacesItemWidth}px`;
 });
 
-btnNext.addEventListener('click', () => {
-  const itemsLeft =
-    itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+surfacesBtnNext.addEventListener('click', () => {
+  const itemsLeft = surfacesItemsCount - (Math.abs(position) + slidesToShow * surfacesItemWidth) / surfacesItemWidth;
 
-  position -=
-    itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+  position -= itemsLeft >= slidesToScroll ? surfacesMovePosition : itemsLeft * surfacesItemWidth;
 
   setPosition();
   checkBtns();
 });
 
-btnPrev.addEventListener('click', () => {
-  const itemsLeft = Math.abs(position) / itemWidth;
+surfacesBtnPrev.addEventListener('click', () => {
+  const itemsLeft = Math.abs(position) / surfacesItemWidth;
 
-  position +=
-    itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+  position += itemsLeft >= slidesToScroll ? surfacesMovePosition : itemsLeft * surfacesItemWidth;
 
   setPosition();
   checkBtns();
 });
 
 const setPosition = () => {
-  sliderTrack.style.transform = `translateX(${position}px)`;
+  surfacesSliderTrack.style.transform = `translateX(${position}px)`;
 };
 
 const checkBtns = () => {
-  btnPrev.disabled = position === 0;
-  btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
+  surfacesBtnPrev.disabled = position === 0;
+  surfacesBtnNext.disabled = position <= -(surfacesItemsCount - slidesToShow) * surfacesItemWidth;
 };
 
 checkBtns();

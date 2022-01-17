@@ -1,6 +1,5 @@
 .page {
-  background-color: $primary-color;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   max-width: 1440px;
   min-width: 320px;
   min-height: 100vh;
@@ -9,9 +8,24 @@
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
+  background-color: $primary-background;
+  color: $primary-color;
 
   &_theme_dark {
-    background-color: $secondary-color;
+    background-color: $secondary-background;
+    color: $secondary-color;
+
+    .page__text {
+      color: $secondary-text-color;
+    }
+
+    .page__link {
+      color: $secondary-link-color;
+    }
+  }
+
+  &__text {
+    color: $primary-text-color;
   }
 
   &__list {
@@ -24,6 +38,7 @@
     text-decoration: none;
     margin: 0;
     padding: 0;
+    color: $primary-link-color;
   }
 
   &__button {
@@ -32,5 +47,11 @@
     border: none;
     cursor: pointer;
     background-color: transparent;
+  }
+
+  @media screen and (max-width: 767px) {
+    & {
+      padding: 0 18px;
+    }
   }
 }

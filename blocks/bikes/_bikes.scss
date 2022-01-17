@@ -1,19 +1,35 @@
 .bikes {
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-
   &__title {
     font-style: normal;
     font-weight: bold;
     font-size: 55px;
     line-height: 109%;
     letter-spacing: -0.5px;
-    color: $primary-title-color;
     padding: 0;
     margin: 60px 0 120px 120px;
     max-width: 460px;
     grid-area: title;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: max-content;
+    gap: 0 30px;
+    min-width: 1200px;
+    margin: 0 120px 210px 120px;
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px 0 0;
+  }
+
+  &__bike-link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 122%;
   }
 
   &__img-wrapper {
@@ -28,7 +44,7 @@
     margin: 0 0 22px 0;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -39,7 +55,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -60,14 +76,5 @@
     margin: 20px;
     border-radius: 20px;
     z-index: 4;
-  }
-
-  &__bike-link {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 122%;
-    color: $primary-text-color;
-    margin: 0 0 180px 0;
   }
 }
