@@ -53,6 +53,10 @@ themeSwitcher.forEach((element) => {
   element.addEventListener('click', () => {
     page.classList.toggle('page_theme_dark');
     const footer = page.querySelector('footer').classList.toggle('footer_theme_dark');
+    const menu = page.querySelector('.header__menu').classList.toggle('header__menu_theme_dark');
+    const menuIconLines = page.querySelectorAll('.header__icon-line').forEach((element) => {
+      element.classList.toggle('header__icon-line_theme_dark');
+    });
     element.classList.toggle('theme-switcher__button_active');
   });
 });

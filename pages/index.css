@@ -313,9 +313,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #f4f4f4;
+}
+.header__menu_theme_dark {
+  background-color: #333;
 }
 .header__menu-icon {
   display: none;
+}
+.header__icon-line_theme_dark {
+  stroke: #fff;
 }
 .header__menu-link {
   font-style: normal;

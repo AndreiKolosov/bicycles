@@ -71,10 +71,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: $primary-background;
+
+    &_theme_dark {
+      background-color: $secondary-background;
+    }
   }
 
   &__menu-icon {
     display: none;
+  }
+
+  &__icon-line {
+    &_theme_dark {
+      stroke: #fff;
+    }
   }
 
   &__menu-link {
