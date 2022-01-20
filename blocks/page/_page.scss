@@ -1,5 +1,6 @@
 .page {
   font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
   max-width: 1440px;
   min-width: 320px;
   min-height: 100vh;
@@ -14,44 +15,5 @@
   &_theme_dark {
     background-color: $secondary-background;
     color: $secondary-color;
-
-    .page__text {
-      color: $secondary-text-color;
-    }
-
-    .page__link {
-      color: $secondary-link-color;
-    }
-  }
-
-  &__text {
-    color: $primary-text-color;
-  }
-
-  &__list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__link {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    color: $primary-link-color;
-  }
-
-  &__button {
-    margin: 0;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-  }
-
-  @media screen and (max-width: 767px) {
-    & {
-      padding: 0 18px;
-    }
   }
 }
