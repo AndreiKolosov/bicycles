@@ -1,12 +1,12 @@
 .intro {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
-  padding: 74px 0 0 120px;
   grid-template-areas:
     'title image'
     'description image'
     'link image'
     'button image';
+  padding: 0 0 0 120px;
 
   &__main-info {
     display: flex;
@@ -145,7 +145,7 @@
 
   @media screen and (max-width: 767px) {
     & {
-      padding: 114px 18px 40px;
+      padding: 40px 0 80px;
       gap: 40px 0;
       grid-template-columns: 1fr;
       grid-template-areas:

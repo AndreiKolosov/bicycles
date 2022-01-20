@@ -2,4 +2,9 @@
   flex: 1;
   position: relative;
   z-index: 1;
+  padding: 74px 0 0;
+
+  @media screen and (max-width: 767px) {
+    padding: 74px 18px 0;
+  }
 }
