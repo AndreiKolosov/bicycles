@@ -1,18 +1,21 @@
 @import '../modules/variables';
+@import '../modules/mixins';
 
 @import '../vendor/normalize.css';
 @import '../vendor/fonts.css';
 
-@import '../blocks/page/page.scss';
-@import '../blocks/text/text.scss';
-@import '../blocks/list/list.scss';
-@import '../blocks/link/link.scss';
-@import '../blocks/btn/btn.scss';
-@import '../blocks/form/form.scss';
-@import '../blocks/logo/logo.scss';
-@import '../blocks/theme-switcher/theme-switcher.scss';
-@import '../blocks/header/header.scss';
-@import '../blocks/content/content.scss';
-@import '../blocks/intro/intro.scss';
+@import '../blocks/page/page';
+@import '../blocks/text/text';
+@import '../blocks/list/list';
+@import '../blocks/link/link';
+@import '../blocks/btn/btn';
+@import '../blocks/form/form';
+@import '../blocks/logo/logo';
+@import '../blocks/theme-switcher/theme-switcher';
+@import '../blocks/header/header';
+@import '../blocks/content/content';
+@import '../blocks/intro/intro';
 @import '../blocks/quote/quote';
-@import '../blocks/workout/workout.scss';
+@import '../blocks/bikes/bikes';
+@import '../blocks/workout/workout';
+@import '../blocks/footer/footer';

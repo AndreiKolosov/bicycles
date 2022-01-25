@@ -31,28 +31,54 @@
       outline: none;
     }
 
-    // &_type_email::-webkit-input-placeholder {
-    //   color: $primary-text-color;
-    // }
+    &::-webkit-input-placeholder {
+      color: #222;
+      opacity: 0.7;
+    }
 
-    // &_type_email::-ms-input-placeholder {
-    //   color: $primary-text-color;
-    // }
+    &::-ms-input-placeholder {
+      color: #222;
+      opacity: 0.7;
+    }
 
-    // &_type_email:hover::-webkit-input-placeholder {
-    //   color: $primary-color;
-    // }
+    &:hover::-webkit-input-placeholder {
+      color: #151515;
+      opacity: 1;
+    }
 
-    // &_type_email:hover::-ms-input-placeholder {
-    //   color: $primary-color;
-    // }
+    &:hover::-ms-input-placeholder {
+      color: #151515;
+      opacity: 1;
+    }
 
-    &_type_email:focus::-webkit-input-placeholder {
+    &:focus::-webkit-input-placeholder {
       color: transparent;
     }
 
-    &_type_email:focus::-ms-input-placeholder {
+    &:focus::-ms-input-placeholder {
       color: transparent;
+    }
+
+    &_theme_dark {
+      &::-webkit-input-placeholder {
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      &::-ms-input-placeholder {
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      &:hover::-webkit-input-placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+
+      &:hover::-ms-input-placeholder {
+        color: #fff;
+        opacity: 1;
+      }
     }
   }
 

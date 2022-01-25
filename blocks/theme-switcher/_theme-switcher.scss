@@ -5,26 +5,28 @@
   border-radius: 9999px;
   position: relative;
 
-  &::before {
-    content: "";
-    width: 28px;
-    height: 28px;
-    background-image: url(../../images/icons/bright-theme-icon.svg);
+  &_theme_dark {
+    background-color: #545454;
+  }
+
+  &__sun-icon {
     position: absolute;
     right: 66px;
     bottom: -2px;
   }
 
-  &::after {
-    content: "";
-    width: 28px;
-    height: 28px;
-    background-image: url(../../images/icons/dark-theme-icon.svg);
-    background-position: center;
-    background-repeat: no-repeat;
+  &__moon-icon {
     position: absolute;
     left: 66px;
     bottom: 0px;
+  }
+
+  &__icon-path {
+    fill: #cfcfcf;
+
+    &_theme_dark {
+      fill: #676767;
+    }
   }
 
   &_place_header {
