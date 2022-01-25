@@ -62,33 +62,18 @@
     </section>
     <section class="bikes">
       <h2 class="bikes__title">Велосипеды</h2>
+      <span class="bikes__menu"></span>
       <ul class="bikes__buttons list">
-        <li><button class="bikes__button btn">Шоссе</button></li>
-        <li><button class="bikes__button btn">Грэвел</button></li>
-        <li><button class="bikes__button btn">TT</button></li>
+        <li class="bikes__buttons-item"><button class="bikes__button btn">Шоссе</button></li>
+        <li class="bikes__buttons-item"><button class="bikes__button btn">Грэвел</button></li>
+        <li class="bikes__buttons-item"><button class="bikes__button btn">TT</button></li>
       </ul>
-      <ul class="bikes__cards-list list" id="highway">
-        <li class="bikes__item">
-          <div class="bikes__img-wrapper">
-            <img src="./images/bikes/highway-bike-1.jpg" alt="Cervelo Caledonia-5" class="bikes__bike-img">
-          </div>
-          <a href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN" class="bikes__item-link link" target="_blank">Cervelo
-            Caledonia-5</a>
-        </li>
-        <li class="bikes__item">
-          <div class="bikes__img-wrapper">
-            <img src="./images/bikes/highway-bike-2.jpg" alt="Cannondale Systemsix Himod" class="bikes__bike-img">
-          </div>
-          <a href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J" class="bikes__item-link link"
-            target="_blank">Cannondale Systemsix Himod</a>
-        </li>
-        <li class="bikes__item">
-          <div class="bikes__img-wrapper">
-            <img src="./images/bikes/highway-bike-3.jpg" alt="Trek Domane SL-7" class="bikes__bike-img">
-          </div>
-          <a href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF" class="bikes__item-link link" target="_blank">Trek
-            Domane SL-7</a>
-        </li>
+      <ul class="bikes__cards-list list">
+      </ul>
+      <ul class="bikes__dots list">
+        <li class="bikes__dot"></li>
+        <li class="bikes__dot"></li>
+        <li class="bikes__dot"></li>
       </ul>
     </section>
 
@@ -106,7 +91,7 @@
   </main>
   <footer class="footer">
     <form class="form form_place_footer">
-      <legend class="form__legend">Подпишитесь на рассылку&nbsp;&mdash;</legend>
+      <h2 class="form__legend">Подпишитесь на рассылку&nbsp;&mdash;</h2>
       <fieldset class="form__input-container">
         <input type="email" class="form__item form__item_type_email" name="e-mail" placeholder="Ваш e-mail">
       </fieldset>
@@ -132,6 +117,16 @@
         stroke="#151515" stroke-width="1.5" />
     </svg>
   </footer>
+
+  <template class="bikes-card-template">
+    <li class="bikes__item">
+      <a href="#" class="bikes__item-link link" target="_blank">
+        <img src="#" alt="#" class="bikes__bike-img">
+        <span class="bikes__bike-name"></span>
+      </a>
+    </li>
+  </template>
+
   <script src="./scripts/index.js"></script>
 </body>
 

@@ -1,5 +1,4 @@
 .bikes {
-  max-width: 1440px;
   display: grid;
   padding: 60px 120px;
   grid-template-areas:
@@ -13,11 +12,20 @@
     grid-area: title;
   }
 
+  &__menu {
+    grid-area: menu;
+    display: none;
+  }
+
+  &__dots {
+    grid-area: dots;
+    display: none;
+  }
+
   &__buttons {
     display: grid;
     gap: 0 40px;
-    grid-template-columns: repeat(2, min-content);
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, min-content);
     grid-area: buttons;
     align-self: end;
     justify-self: end;
@@ -29,71 +37,170 @@
     font-size: 18px;
     line-height: 1.56;
     text-align: right;
+    color: #222;
+    opacity: 0.7;
+
+    &_active {
+      font-weight: 600;
+      color: #151515;
+      opacity: 1;
+    }
   }
 
   &__cards-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0 30px;
-    margin: 0 0 42px 0;
     grid-area: list;
   }
 
-  // &__item {
-  // }
-
-  &__img-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
+  &__bike-img {
     max-width: 380px;
     max-height: 380px;
-    height: 100%;
+    min-width: 275px;
+    min-height: 275px;
     width: 100%;
-    margin: 0 0 22px 0;
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-    filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
-
-    &::before {
-      content: '';
-      box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-      position: absolute;
-      border-radius: 20px;
-      max-width: 380px;
-      max-height: 380px;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-      background-color: #f4f4f4;
-    }
-
-    &::after {
-      content: '';
-      background-color: #c4c4c4;
-      position: absolute;
-      border-radius: 20px;
-      max-width: 380px;
-      max-height: 380px;
-      height: 100%;
-      width: 100%;
-      z-index: 0;
-    }
-  }
-
-  &__bike-img {
-    max-width: 340px;
-    max-height: 340px;
+    height: auto;
     border-radius: 20px;
-    position: relative;
-    z-index: 4;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 0 22px 0;
+    box-shadow: 0 20px 140px rgba(0, 0, 0, 0.06);
   }
 
-  &__item-link {
+  &__bike-name {
     font-weight: 600;
     font-size: 18px;
     line-height: 1.22;
+    max-width: 340px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__title {
+      font-size: 45px;
+    }
+
+    &__cards-list {
+      gap: 0 20px;
+    }
+
+    &__bike-name {
+      font-size: 16px;
+    }
+
+    &__button {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 1128px) {
+    & {
+      grid-template-areas:
+        'title'
+        'buttons'
+        'list';
+    }
+
+    &__cards-list {
+      margin: 0 auto;
+      grid-template-columns: 380px;
+    }
+
+    &__buttons {
+      justify-self: start;
+      margin: 0 0 80px 0;
+    }
+
+    &__title {
+      margin: 0 0 80px 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    & {
+      padding: 0 18px;
+      grid-template-areas:
+        'title'
+        'menu'
+        'list'
+        'dots';
+      position: relative;
+      overflow: hidden;
+    }
+
+    &__menu {
+      display: block;
+      padding: 0 0 0 12px;
+      border: 1px solid #e3e3e3;
+      box-sizing: border-box;
+      border-radius: 2px;
+      margin: 0 0 28px 0;
+      width: 114px;
+      height: 30px;
+      background-image: url(../../images/icons/^.svg);
+      background-repeat: no-repeat;
+      background-position: 90px 13px;
+      position: relative;
+      font-weight: 600;
+      line-height: 2;
+      color: #151515;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 222px;
+      left: 120px;
+      background-color: rgba(196, 196, 196, 0.3);
+      width: 114px;
+      text-align: center;
+      padding: 5px;
+      box-sizing: border-box;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 10;
+      transition: linear 0.3s;
+
+      &_active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &__cards-list {
+      display: flex;
+      margin: 0 auto 20px auto;
+      max-width: 380px;
+      overflow: hidden;
+    }
+
+    &__item-link {
+      border-radius: 20px;
+      box-shadow: 0 20px 140px rgba(0, 0, 0, 0.06);
+    }
+
+    &__bike-img {
+      box-shadow: none;
+    }
+
+    &__dots {
+      display: block;
+      justify-self: center;
+      display: grid;
+      grid-template-columns: repeat(3, min-content);
+      gap: 0 5px;
+    }
+
+    &__dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #cacaca;
+
+      &_active {
+        background-color: #151515;
+      }
+    }
   }
 }

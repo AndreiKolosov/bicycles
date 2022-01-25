@@ -662,7 +662,6 @@
 }
 
 .bikes {
-  max-width: 1440px;
   display: grid;
   padding: 60px 120px;
   grid-template-areas: "title title buttons" "list list list";
@@ -676,12 +675,19 @@
   max-width: 460px;
   grid-area: title;
 }
+.bikes__menu {
+  grid-area: menu;
+  display: none;
+}
+.bikes__dots {
+  grid-area: dots;
+  display: none;
+}
 .bikes__buttons {
   display: grid;
   gap: 0 40px;
-  grid-template-columns: repeat(2, -webkit-min-content);
-  grid-template-columns: repeat(2, min-content);
-  grid-auto-flow: column;
+  grid-template-columns: repeat(3, -webkit-min-content);
+  grid-template-columns: repeat(3, min-content);
   grid-area: buttons;
   align-self: end;
   justify-self: end;
@@ -692,63 +698,143 @@
   font-size: 18px;
   line-height: 1.56;
   text-align: right;
+  color: #222;
+  opacity: 0.7;
+}
+.bikes__button_active {
+  font-weight: 600;
+  color: #151515;
+  opacity: 1;
 }
 .bikes__cards-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0 30px;
-  margin: 0 0 42px 0;
   grid-area: list;
 }
-.bikes__img-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  max-width: 380px;
-  max-height: 380px;
-  height: 100%;
-  width: 100%;
-  margin: 0 0 22px 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
-}
-.bikes__img-wrapper::before {
-  content: "";
-  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-  position: absolute;
-  border-radius: 20px;
-  max-width: 380px;
-  max-height: 380px;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-color: #f4f4f4;
-}
-.bikes__img-wrapper::after {
-  content: "";
-  background-color: #c4c4c4;
-  position: absolute;
-  border-radius: 20px;
-  max-width: 380px;
-  max-height: 380px;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-}
 .bikes__bike-img {
-  max-width: 340px;
-  max-height: 340px;
+  max-width: 380px;
+  max-height: 380px;
+  min-width: 275px;
+  min-height: 275px;
+  width: 100%;
+  height: auto;
   border-radius: 20px;
-  position: relative;
-  z-index: 4;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 0 22px 0;
+  box-shadow: 0 20px 140px rgba(0, 0, 0, 0.06);
 }
-.bikes__item-link {
+.bikes__bike-name {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.22;
+  max-width: 340px;
+}
+@media screen and (max-width: 1200px) {
+  .bikes__title {
+    font-size: 45px;
+  }
+  .bikes__cards-list {
+    gap: 0 20px;
+  }
+  .bikes__bike-name {
+    font-size: 16px;
+  }
+  .bikes__button {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1128px) {
+  .bikes {
+    grid-template-areas: "title" "buttons" "list";
+  }
+  .bikes__cards-list {
+    margin: 0 auto;
+    grid-template-columns: 380px;
+  }
+  .bikes__buttons {
+    justify-self: start;
+    margin: 0 0 80px 0;
+  }
+  .bikes__title {
+    margin: 0 0 80px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .bikes {
+    padding: 0 18px;
+    grid-template-areas: "title" "menu" "list" "dots";
+    position: relative;
+    overflow: hidden;
+  }
+  .bikes__menu {
+    display: block;
+    padding: 0 0 0 12px;
+    border: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin: 0 0 28px 0;
+    width: 114px;
+    height: 30px;
+    background-image: url(../../images/icons/^.svg);
+    background-repeat: no-repeat;
+    background-position: 90px 13px;
+    position: relative;
+    font-weight: 600;
+    line-height: 2;
+    color: #151515;
+  }
+  .bikes__buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 222px;
+    left: 120px;
+    background-color: rgba(196, 196, 196, 0.3);
+    width: 114px;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    transition: linear 0.3s;
+  }
+  .bikes__buttons_active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .bikes__cards-list {
+    display: flex;
+    margin: 0 auto 20px auto;
+    max-width: 380px;
+    overflow: hidden;
+  }
+  .bikes__item-link {
+    border-radius: 20px;
+    box-shadow: 0 20px 140px rgba(0, 0, 0, 0.06);
+  }
+  .bikes__bike-img {
+    box-shadow: none;
+  }
+  .bikes__dots {
+    display: block;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, -webkit-min-content);
+    grid-template-columns: repeat(3, min-content);
+    gap: 0 5px;
+  }
+  .bikes__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #cacaca;
+  }
+  .bikes__dot_active {
+    background-color: #151515;
+  }
 }
 
 .workout {

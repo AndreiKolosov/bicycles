@@ -9,21 +9,62 @@ const footerForm = document.querySelector('.form_place_footer'); // форма �
 const emailInput = footerForm.querySelector('.form__item_type_email'); // поле ввода email в форме футера
 const footerFormBtn = footerForm.querySelector('.form__button'); // Кнопка в форме
 const themeSwitcherBtn = document.querySelectorAll('.theme-switcher__button'); // Кнопки переключатели темы
+
+const highwayBikes = [
+  {
+    name: 'Cervelo Caledonia-5',
+    link: 'https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN',
+    src: './images/bikes/highway-bike-1.jpg',
+  },
+  {
+    name: 'Cannondale Systemsix Himod',
+    link: 'https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J',
+    src: './images/bikes/highway-bike-2.jpg',
+  },
+  {
+    name: 'Trek Domane SL-7',
+    link: 'https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF',
+    src: './images/bikes/highway-bike-3.jpg',
+  },
+];
+
+const gravelBikes = [
+  {
+    name: 'Cervelo Aspero GRX 810',
+    link: ' https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE',
+    src: './images/bikes/gravel-bike-1.jpg',
+  },
+  {
+    name: 'Specialized S-Works Diverge',
+    link: 'https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9',
+    src: './images/bikes/gravel-bike-2.jpg',
+  },
+  {
+    name: 'Cannondale Topstone Lefty 3 ',
+    link: 'https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8',
+    src: './images/bikes/gravel-bike-3.jpg',
+  },
+];
+
+const ttBikes = [
+  {
+    name: 'Specialized S-Works Shiv',
+    link: 'https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9',
+    src: './images/bikes/tt-bike-1.jpg',
+  },
+  {
+    name: 'BMC Timemachine 01 ONE',
+    link: 'https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835',
+    src: './images/bikes/tt-bike-2.jpg',
+  },
+  {
+    name: 'Cervelo P-Series',
+    link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q',
+    src: './images/bikes/tt-bike-3.jpg',
+  },
+];
+
 // --------------------------------------------------//
-// Slider surfaces
-// let position = 0;
-// const slidesToShow = 1;
-// const slidesToScroll = 1;
-// const surfacesSliderContainer = document.querySelector('#surfaces-slider-container');
-// const surfacesSliderTrack = surfacesSliderContainer.querySelector('.slider__track');
-// const surfacesSliderItems = surfacesSliderContainer.querySelectorAll('.slider__item');
-// const surfacesItemsCount = surfacesSliderItems.length;
-// const surfacesItemWidth = surfacesSliderContainer.clientWidth / slidesToShow;
-// const surfacesMovePosition = slidesToScroll * surfacesItemWidth;
-// const surfacesBtnPrev = document.querySelector('#btn-prev');
-// const surfacesBtnNext = document.querySelector('#btn-next');
-// --------------------------------------------------//
-// Slider bikes
 
 // --------------------------------------------------//
 
@@ -78,39 +119,66 @@ themeSwitcherBtn.forEach((element) => {
 });
 // --------------------------------------------------//
 
-// Slider surfaces
+const bikesButtons = page.querySelectorAll('.bikes__button');
+const bikesActiveBtn = page.querySelector('.bikes__button_active');
+const bikesButtonsList = page.querySelector('.bikes__buttons');
+const bikesCardsContainer = page.querySelector('.bikes__cards-list');
+const cardTemplate = page.querySelector('.bikes-card-template').content;
+const bikesMenu = page.querySelector('.bikes__menu');
 
-// surfacesSliderItems.forEach((item) => {
-//   item.style.minWidth = `${surfacesItemWidth}px`;
-// });
+bikesButtons.forEach((element) => {
+  element.addEventListener('click', () => {
+    bikesMenu.textContent = element.textContent;
+    let arr;
+    if (bikesMenu.textContent === 'Шоссе') {
+      arr = highwayBikes;
+    } else if (bikesMenu.textContent === 'Грэвел') {
+      arr = gravelBikes;
+    } else {
+      arr = ttBikes;
+    }
+    changeCards(arr);
+    openBikesMenu();
+  });
+});
 
-// surfacesBtnNext.addEventListener('click', () => {
-//   const itemsLeft =
-//     surfacesItemsCount -
-//     (Math.abs(position) + slidesToShow * surfacesItemWidth) / surfacesItemWidth;
+function openBikesMenu() {
+  bikesButtonsList.classList.toggle('bikes__buttons_active');
+}
 
-//   position -= itemsLeft >= slidesToScroll ? surfacesMovePosition : itemsLeft * surfacesItemWidth;
+function createBikesCard(name, link, src) {
+  const bikeCard = cardTemplate.querySelector('.bikes__item').cloneNode(true);
+  const itemLink = bikeCard.querySelector('.bikes__item-link');
+  const itemImg = bikeCard.querySelector('.bikes__bike-img');
+  const itemName = bikeCard.querySelector('.bikes__bike-name');
 
-//   setPosition();
-//   checkBtns();
-// });
+  itemLink.href = link;
+  itemImg.src = src;
+  itemName.textContent = name;
 
-// surfacesBtnPrev.addEventListener('click', () => {
-//   const itemsLeft = Math.abs(position) / surfacesItemWidth;
+  return bikeCard;
+}
 
-//   position += itemsLeft >= slidesToScroll ? surfacesMovePosition : itemsLeft * surfacesItemWidth;
+function clearcardsList() {
+  let listItems = bikesCardsContainer.querySelectorAll('.bikes__item');
+  listItems.forEach((element) => {
+    element.remove();
+  });
+}
 
-//   setPosition();
-//   checkBtns();
-// });
+function changeCards(arr) {
+  clearcardsList();
 
-// const setPosition = () => {
-//   surfacesSliderTrack.style.transform = `translateX(${position}px)`;
-// };
+  let newCards = arr.map(function (card) {
+    return createBikesCard(card.name, card.link, card.src);
+  });
+  bikesCardsContainer.append(...newCards);
+}
 
-// const checkBtns = () => {
-//   surfacesBtnPrev.disabled = position === 0;
-//   surfacesBtnNext.disabled = position <= -(surfacesItemsCount - slidesToShow) * surfacesItemWidth;
-// };
+let BikesCards = highwayBikes.map(function (card) {
+  return createBikesCard(card.name, card.link, card.src);
+});
 
-// checkBtns();
+bikesMenu.addEventListener('click', openBikesMenu);
+bikesCardsContainer.append(...BikesCards);
+bikesMenu.textContent = bikesButtons[0].textContent;
