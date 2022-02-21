@@ -1,0 +1,21 @@
+@import '../modules/variables';
+@import '../modules/mixins';
+
+@import '../vendor/normalize.css';
+@import '../vendor/fonts.css';
+
+@import '../blocks/page/page';
+@import '../blocks/text/text';
+@import '../blocks/list/list';
+@import '../blocks/link/link';
+@import '../blocks/btn/btn';
+@import '../blocks/form/form';
+@import '../blocks/logo/logo';
+@import '../blocks/theme-switcher/theme-switcher';
+@import '../blocks/header/header';
+@import '../blocks/content/content';
+@import '../blocks/intro/intro';
+@import '../blocks/quote/quote';
+@import '../blocks/bikes/bikes';
+@import '../blocks/workout/workout';
+@import '../blocks/footer/footer';

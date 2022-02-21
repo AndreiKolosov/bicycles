@@ -1,0 +1,19 @@
+.page {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  max-width: 1440px;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  background-color: $primary-background;
+  color: $primary-color;
+
+  &_theme_dark {
+    background-color: $secondary-background;
+    color: $secondary-color;
+  }
+}

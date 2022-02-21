@@ -1,0 +1,6 @@
+.editorconfig
+text.txt
+.DS_Store
+.vscode
+.idea
+.prettierrc

@@ -1,0 +1,38 @@
+.footer {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'form form'
+    'copy switcher';
+  padding: 80px 120px 60px;
+  z-index: 1;
+  background-color: $primary-footer-bcg;
+
+  &_theme_dark {
+    background-color: $secondary-footer-bcg;
+
+    .footer__copyright {
+      color: $secondary-copyright-color;
+    }
+  }
+
+  &__copyright {
+    grid-area: copy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    padding: 0;
+    margin: 0;
+    color: $primary-copyright-color;
+  }
+
+  @media screen and (max-width: 767px) {
+    & {
+      padding: 60px 18px 16px;
+      grid-template-areas:
+        'form form'
+        'copy logo';
+    }
+  }
+}

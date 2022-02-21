@@ -1,0 +1,120 @@
+.form {
+  margin: 0 0 100px 0;
+  position: relative;
+
+  &_place_footer {
+    grid-area: form;
+  }
+
+  &__legend {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    max-width: 230px;
+    margin: 0 0 50px;
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+
+    &_type_email {
+      width: 360px;
+      height: 50px;
+      font-family: inherit;
+      text-indent: 20px;
+      border: 1px solid rgba(199, 199, 199, 0.5);
+      border-radius: 4px;
+      background-color: inherit;
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #222;
+      opacity: 0.7;
+    }
+
+    &::-ms-input-placeholder {
+      color: #222;
+      opacity: 0.7;
+    }
+
+    &:hover::-webkit-input-placeholder {
+      color: #151515;
+      opacity: 1;
+    }
+
+    &:hover::-ms-input-placeholder {
+      color: #151515;
+      opacity: 1;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    &:focus::-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &_theme_dark {
+      &::-webkit-input-placeholder {
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      &::-ms-input-placeholder {
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      &:hover::-webkit-input-placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+
+      &:hover::-ms-input-placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input-container {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &__button {
+    position: absolute;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    text-align: right;
+    bottom: 11px;
+    left: 328px;
+  }
+
+  &__button_disabled {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    &__legend {
+      margin: 0 0 40px;
+    }
+
+    &__item_type_email {
+      width: 284px;
+      height: 50px;
+    }
+
+    &__button {
+      left: 252px;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.quote {
+  & {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'img text'
+      'img author';
+    gap: 0 80px;
+    padding: 120px 0 60px 120px;
+  }
+
+  &__img {
+    grid-area: img;
+    background-image: url(../../images/placeholders/Placeholder-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 650px;
+    max-height: 460px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.29;
+    letter-spacing: -0.5px;
+    max-width: 460px;
+    margin: 0 0 39.5% 0;
+    grid-area: text;
+  }
+
+  &__author {
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    grid-area: author;
+  }
+
+  &__subline {
+    margin: 6px 0 0 0;
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 460px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      gap: 0 60px;
+    }
+
+    &__text {
+      font-size: 25px;
+      max-width: 330px;
+      margin: 0 0 30% 0;
+    }
+
+    &__author {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 150px;
+    }
+  }
+
+  @media screen and (max-width: 877px) {
+    & {
+      gap: 0 40px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    & {
+      border-top: 1px solid #e3e3e3;
+      padding: 20px 0 80px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__img {
+      align-self: center;
+      min-width: 284px;
+      min-height: 204px;
+      width: 100%;
+      padding-top: calc(50% * 0.35 - 50px);
+      padding-bottom: calc(50% * 0.35 - 50px);
+      margin: 0 0 40px 0;
+    }
+  }
+
+  @media screen and (max-width: 533px) {
+    &__text {
+      font-size: 23px;
+      line-height: 1.26;
+      max-width: 284px;
+      margin: 0 0 40px 0;
+    }
+
+    &__author {
+      font-size: 14px;
+      line-height: 1.57;
+      max-width: 284px;
+    }
+
+    &__subline {
+      font-size: 10px;
+      line-height: 1.6;
+      max-width: 284px;
+    }
+  }
+}
